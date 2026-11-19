@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gerhonte · Turnos SAS</title>
+<meta content="noindex,nofollow" name="robots"/>
+<style>
+:root{
+  --bg:#f5f5f7; --ink:#1d1d1f; --sub:#6e6e73; --card:#ffffff;
+  --accent:#0071e3; --accent-soft:#e8f1fc; --line:#d2d2d7;
+  --ok:#0b7a3e; --warn:#b25000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Helvetica,Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:50;background:rgba(245,245,247,.82);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .bar{display:flex;gap:18px;align-items:center;overflow-x:auto;padding:12px 20px;max-width:980px;margin:0 auto;font-size:13px;white-space:nowrap}
+nav .brand{font-weight:600;font-size:14px}
+nav a{color:var(--ink)}
+.hero{text-align:center;padding:88px 20px 56px}
+.hero .eyebrow{color:var(--accent);font-weight:600;font-size:17px;letter-spacing:.01em}
+.hero h1{font-size:52px;line-height:1.08;font-weight:700;letter-spacing:-.02em;margin:10px 0 14px}
+.hero p{font-size:21px;color:var(--sub);max-width:700px;margin:0 auto}
+.hero .badge{display:inline-block;margin-top:18px;font-size:13px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--card)}
+section{padding:64px 0}
+h2{font-size:36px;letter-spacing:-.015em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--sub);font-size:17px;max-width:760px;margin-bottom:28px}
+h3{font-size:22px;font-weight:600;margin:28px 0 10px}
+.grid{display:grid;gap:16px}
+.grid.two{grid-template-columns:1fr 1fr}
+@media(max-width:760px){.grid.two{grid-template-columns:1fr}.hero h1{font-size:38px}.hero p{font-size:18px}h2{font-size:29px}}
+.card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card h4{font-size:17px;font-weight:600;margin-bottom:6px}
+.card p,.card li{font-size:15px;color:var(--sub)}
+.card ul{padding-left:18px;margin-top:6px}
+.big-num{font-size:40px;font-weight:700;letter-spacing:-.02em}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;margin-right:6px}
+.tag.resta{background:#fdeceb;color:#a12622}
+.tag.suma{background:#e7f6ec;color:var(--ok)}
+.tag.neutra{background:#eef0f3;color:var(--sub)}
+.note{border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:10px;padding:14px 16px;font-size:14px;color:var(--ink);margin:16px 0}
+.note.warn{border-color:var(--warn);background:#fdf1e7}
+figure{margin:18px 0}
+figure img{width:100%;border-radius:14px;border:1px solid var(--line);display:block;background:#fff}
+figcaption{font-size:13px;color:var(--sub);margin-top:8px}
+.src{font-size:12.5px;color:var(--sub)}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--card);border-radius:14px;overflow:hidden}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--sub);background:#fafafa}
+code.k{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.92em;background:#eef0f3;border-radius:5px;padding:1px 6px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:36px 20px 60px;color:var(--sub);font-size:13px}
+ol.refs{padding-left:20px}
+ol.refs li{margin-bottom:10px;font-size:13.5px;color:var(--sub)}
+
+.btn{border:1px solid var(--line);background:#fff;color:var(--accent);border-radius:999px;padding:10px 16px;font:600 14px inherit;cursor:pointer;margin:0 4px 8px 0}
+.btn:hover,.btn:focus-visible{background:var(--accent-soft);outline:2px solid var(--accent);outline-offset:2px}
+#calculadora .grid{margin:12px 0 20px}
+#calculadora label{font-size:14px;color:var(--sub)}
+#calculadora input{border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-size:17px;margin-top:8px;padding:12px!important;min-height:48px}
+#calculadora input:focus{outline:2px solid var(--accent);outline-offset:2px}
+#calculadora .big-num{margin:4px 0 12px}
+#calc-detail{font-size:14px}
+</style>
+</head>
+<body>
+<nav><div class="bar">
+<span class="brand">Gerhonte · Turnos</span>
+<a href="#cuadrante">El cuadrante</a>
+<a href="#grabar">Cómo se graban</a>
+<a href="#incidencias">Incidencias</a>
+<a href="#diciembre">24 y 31 de diciembre</a>
+<a href="#calculadora">Calculadora</a>
+<a href="#casos">Casos prácticos</a>
+<a href="#fuentes">Fuentes</a>
+</div></nav>
+<header class="hero">
+<div class="eyebrow">Guía práctica para supervisión de enfermería</div>
+<h1>Los turnos en Gerhonte,<br/>explicados con calma.</h1>
+<p>Jornada, turnos diurnos y rotatorios e incidencias para supervisión de enfermería. Guía independiente basada en documentación pública del SAS.</p>
+<div class="badge">Guía abierta de formación · No es una web oficial del SAS</div>
+</header>
+<main class="wrap">
+<!-- ============ 1. EL CUADRANTE ============ -->
+<section id="cuadrante">
+<h2>1. El cuadrante: qué horas se esperan de cada persona</h2>
+<p class="lede">La planilla del servicio se organiza por tipos de horas. Saber leerlas es la base para grabar bien los turnos.</p>
+<div class="grid two">
+<div class="card">
+<div class="big-num">1.540 h</div>
+<h4>Turno diurno (jornada anual)</h4>
+<p>Referencia de jornada anual completa: <b>1.540 horas</b>. No se obtiene una nueva obligación cambiando 365 por 366 en la fórmula de una diapositiva. Comprobar jornada individual según nombramiento, período y ajustes aplicables.</p>
+</div>
+<div class="card">
+<div class="big-num">1.483 h</div>
+<h4>Turno rotatorio</h4>
+<p>Referencia de jornada anual completa: <b>1.483 horas</b>, con ponderación en función de las noches. La suma bruta de una planilla no sustituye esta referencia ni justifica exigir ~1.679 horas.</p>
+</div>
+<div class="card">
+<h4>Cálculo anual y registro diario</h4>
+
+
+<p>El Manual SAS 2026 distingue el cálculo de jornada (art. 11.2) del cómputo en GERHONTE (art. 11.3). Este último enumera permisos con siete horas y reajuste posterior; para el resto indica las horas del turno programado. Consultar el permiso concreto antes de registrar.</p></div>
+<div class="card">
+<h4>Referencia individual</h4>
+<p>Las referencias generales no sustituyen la jornada individual. Comprobar nombramiento, período activo, reducciones y ponderación por noches con la unidad competente.</p>
+</div>
+</div>
+
+
+</section>
+<!-- ============ 2. CÓMO SE GRABAN ============ -->
+<section id="grabar">
+<h2>2. Cómo se graban los turnos</h2>
+<p class="lede">Comprobaciones generales antes del registro. Esta guía no reproduce pantallas internas ni acredita los botones de la versión instalada.</p>
+<div class="grid two">
+<div class="card">
+<h4>1 · Planifica la planilla</h4>
+<p>Define el ciclo de turnos del servicio (mañanas, tardes, noches, libranzas) y las incidencias previstas del año: vacaciones, asuntos particulares, festivos.</p>
+</div>
+<div class="card">
+<h4>2 · Graba en plazo</h4>
+<p>Confirmar autorización y procedimiento vigente del centro antes del disfrute y del registro. No se accede desde esta página a GERHONTE ni se envían cambios.</p>
+</div>
+<div class="card">
+<h4>3 · Revisa el saldo</h4>
+<p>Contrasta Horas Reales con Horas de Turnos y comprueba cómo se incorpora la nocturnidad. Investiga la causa de las diferencias y utiliza solo ajustes autorizados. No uses CJO, CJH, CJA o DAJ para forzar saldo cero.</p>
+</div>
+<div class="card">
+<h4>4 · Comprueba</h4>
+<p>Revisa la planilla persona a persona: cada diferencia debe estar explicada y cada incidencia debe tener código y autorización correctos.</p>
+</div>
+</div>
+
+</section>
+</main>
+<!-- ============ 3. INCIDENCIAS ============ -->
+<section class="wrap" id="incidencias" style="max-width:980px;margin:0 auto;padding:64px 20px">
+<h2>3. Las incidencias, una a una</h2>
+<p class="lede">Busca por código o concepto. Nomenclatura del catálogo publicado en 2025; reglas del Manual oficial SAS 2026. No clasificar automáticamente cada código como suma, resta o neutro.</p>
+<input id="q" placeholder="Buscar código o concepto (p. ej. CJO, asuntos particulares, antigüedad)..." style="width:100%;padding:14px 18px;font-size:16px;border:1px solid var(--line);border-radius:999px;background:#fff;margin-bottom:14px" type="search"/>
+<div id="filters" style="margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap">
+</div>
+<div class="grid two" id="codes"></div>
+<div class="note" style="margin-top:22px">El nombre de una incidencia no autoriza su disfrute ni determina por sí solo su valor en horas. Revisar ejercicio, permiso concreto, turno y autorización.</div>
+</section>
+<main class="wrap">
+<!-- ============ 4. DICIEMBRE ============ -->
+<section id="diciembre">
+<h2>4. El 24 y el 31 de diciembre: la incidencia DIC</h2>
+<p class="lede">El Manual oficial SAS2026, art.30.3.e, reconoce dos días más de licencia, el 24 y el 31 de diciembre. Quien realiza jornada ordinaria esos días puede disfrutarlos en otras fechas. La consideración de trabajados tiene la salvedad del descanso programado: revisar el cuadrante concreto.</p>
+<div class="grid two">
+<div class="card">
+<h4>Si trabajas el 24 o el 31</h4>
+<p>El art. 30.3.e permite disfrutar la compensación en otras fechas a quienes realizan jornada ordinaria esos días. Registrar solo conforme al procedimiento y autorización aplicables.</p>
+</div>
+<div class="card">
+<h4>Plazo de disfrute</h4>
+<p>El Manual oficial SAS 2026, art. 30.3.e (p. 34), permite disfrutar las compensaciones por trabajar el 24 y/o 31 de diciembre hasta el 28/29 de febrero del año siguiente: para DIC 2026, hasta el <b>28/02/2027</b>. El art. 30.3.c fija el <b>31/01/2027 para DCI y DCF 2026</b>. No extender ese plazo a todas las vacaciones o permisos: el art. 33.3.5 establece para vacaciones el 31 de diciembre, salvo las excepciones del art. 38.2. Confirma la instrucción anual aplicable antes de grabar.</p>
+</div>
+<div class="card">
+<h4>Relación con DCI</h4>
+<p><code class="k">DIC</code> y <code class="k">DCI</code> son códigos distintos: DCI son los 6 días de asuntos particulares; DIC compensa trabajar el 24 o el 31 de diciembre. No se sustituyen entre sí.</p>
+</div>
+<div class="card">
+<h4>En el cómputo anual</h4>
+<p>No añadir automáticamente dos días a todas las personas. El art. 30.3.e incluye la salvedad de los descansos programados y prohíbe generar un incremento de jornada por su disfrute.</p>
+</div>
+</div>
+<div class="note warn">Las fechas concretas de cada año (festivos, plazos) vienen en las Instrucciones anuales de la D.G. de Recursos Humanos. Comprueba siempre las del año en curso.</div>
+</section>
+</main>
+<main class="wrap">
+<!-- ============ 5. CALCULADORA ============ -->
+<section id="calculadora">
+<h2>5. Comparar la planilla, sin inventar una jornada</h2>
+<p class="lede">Referencias generales de jornada anual completa: diurno 1.540 h; rotatorio 1.483 h, con ponderación por noches. No se recalculan cambiando 365 por 366 días.</p>
+<div class="card" style="max-width:640px">
+<p><button class="btn" id="ref-diurno" type="button">Diurno · 1.540 h</button> <button class="btn" id="ref-rotatorio" type="button">Rotatorio · 1.483 h</button></p>
+<div class="grid two">
+<label>Horas de planilla del mismo período<br/><input id="planilla" inputmode="decimal" style="width:100%;padding:8px" type="text" value="1540"/></label>
+<label>Referencia individual confirmada (h)<br/><input id="referencia" inputmode="decimal" style="width:100%;padding:8px" type="text" value="1540"/></label>
+</div>
+<p>Diferencia aritmética (planilla menos referencia):</p><div class="big-num" id="result">0 h</div>
+<p id="calc-detail"></p>
+</div>
+<div class="note warn">No es una deuda ni autoriza a grabar incidencias. Revisar contrato, período, turno, noches, permisos y ajustes autorizados con la unidad competente. No grabar CJO/CJH/CJA solo para forzar un saldo a cero.</div>
+</section>
+<!-- ============ 6. CASOS ============ -->
+<section id="casos"><h2>6. Casos prácticos</h2><p class="lede">Ejemplos didácticos propios. No corresponden a personas ni planillas reales.</p><details class="card"><summary>Diferencia aritmética: +12 horas</summary><p>Si una planilla hipotética muestra 1.552 h y la referencia individual confirmada es 1.540 h, la diferencia es +12 h. Esto no prueba una deuda ni autoriza un ajuste automático. Hay que explicar su causa.</p></details><details class="card" style="margin-top:12px"><summary>DCF: sexto y séptimo trienio</summary><p>El art. 30.3.b reconoce dos días adicionales desde el sexto trienio y mantiene dos en el séptimo. Desde el octavo aumenta uno por cada trienio: 3, 4, 5...</p></details><details class="card" style="margin-top:12px"><summary>VAD: no confundir cálculo y disfrute</summary><p>El art. 33.3 establece 1, 2, 3 o 4 días a los 15, 20, 25 o 30 años. Siete horas por día es la referencia para cálculo de jornada. El tercer período requiere solicitud, razones organizativas o asistenciales que lo permitan y resolución motivada; en ese caso se disfruta sin interrupción ni fraccionamiento (art. 34.b).</p></details></section>
+</main>
+<main class="wrap">
+<!-- ============ 7. FUENTES ============ -->
+<section id="fuentes">
+<h2>7. Fuentes</h2>
+<p class="lede">Fuentes públicas enlazadas, con año y alcance. Revisión: 19 de noviembre de 2026.</p>
+<ol class="refs">
+<li><b>Jornada anual: 1.540 h diurno / 1.483 h rotatorio</b>. <a href="https://www.juntadeandalucia.es/haciendayadministracionpublica/servicios/fiscalizacion/guias_fiscalizacion/dc/DMJLS.html">Decreto 553/2004, art.5.1</a>; <a href="https://www.juntadeandalucia.es/boja/2018/140/BOJA18-140-00012-12597-01_00139920.pdf">Acuerdo 17/07/2018, apartado Sexto (35h)</a>; <a href="https://sindicatotecnos.es/2026/01/19/sas-andalucia-vacaciones-y-permisos-2026/">contraste sindical2026</a>. Verificar jornada individual y ponderación por noches.</li>
+
+<li><b>Listado de incidencias vigentes de Gerhonte (2025)</b>: significados oficiales de los códigos (CJO, CJH, CJA, DAA, DCF, DCI, DIC, VAD, DAJ...). <a href="https://simeg.org/wp/wp-content/uploads/2025/04/Listado-incidencias-gerhonte.pdf">simeg.org/.../Listado-incidencias-gerhonte.pdf</a></li>
+<li><b>Manual oficial SAS 2026</b> (publicado 27/01/2026): arts. 11.2/11.3, 30.3.c/e y 33.3/34.b. <a href="https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/sites/default/files/sincfiles/wsas-media-mediafile_sasdocumento/2026/MANUAL_003__2026_para_publicar%20f.pdf">Manual SAS 2026</a>. <a href="https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/sites/default/files/sincfiles/wsas-media-mediafile_sasdocumento/2026/resolucion_manual_correccion_errores%20F.pdf">Corrección SSCC 0008/26 (16/02/2026)</a>, solo arts. 16, 18 y 19. </li>
+<li><b>Instrucciones DGRMTR ciclo 2025 (firmadas 22/10/2025)</b>: DIC 2025 hasta el 28/02/2026; reglas de CJA y DAJ. <a href="https://simeg.org/wp/wp-content/uploads/2025/04/Instrucciones-Permisos-2025-DGRMTR.pdf">simeg.org/.../Instrucciones-Permisos-2025-DGRMTR.pdf</a></li>
+
+<li><b>Ayuda oficial Gerhonte (ayudaDIGITAL, SAS)</b>: descripción de la aplicación, curso de turnos y nivel básico; avisos de versión 2.67 (11/02/2026) y 2.68 (19/02/2026). <a href="https://ayudadigital.sspa.juntadeandalucia.es">ayudadigital.sspa.juntadeandalucia.es</a></li>
+
+</ol>
+<div class="note">Esta edición abierta no incluye capturas ni documentos del curso interno. No muestra datos de personal. Para una actuación real, consultar la norma e instrucciones vigentes y la unidad competente.</div>
+</section>
+</main>
+<footer>
+<div class="wrap">Gerhonte · Turnos SAS. Guía independiente de formación, no oficial. Sin acceso a la aplicación ni a turnos reales. No recoge datos ni envía formularios. Revisión 19/11/2026.</div>
+</footer>
+<style>
+.fbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:13.5px;cursor:pointer;color:var(--ink)}
+.fbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+details summary::-webkit-details-marker{color:var(--accent)}
+</style>
+<script>
+const CODES=[{"c": "CJO", "n": "Cambio de jornada", "f": "all", "d": "Revisar el cambio autorizado y su duración. El código no autoriza ajustar cualquier saldo.", "src": "Catálogo público 2025; Manual SAS 2026, salvo CJA: instrucción histórica 2025"}, {"c": "CJH", "n": "Cambio de jornada (rango horario)", "f": "all", "d": "Identificar el rango horario y el contexto del registro. No asumir efecto fijo en horas.", "src": "Catálogo público 2025; Manual SAS 2026, salvo CJA: instrucción histórica 2025"}, {"c": "CJA", "n": "Cambio de jornada (año anterior)", "f": "all", "d": "Identificar el ejercicio. La instrucción del ciclo 2025 prohíbe registrar con CJA permisos no disfrutados antes del 31 de enero; no es una autorización vigente para recuperar días caducados.", "src": "Catálogo público 2025; Manual SAS 2026, salvo CJA: instrucción histórica 2025"}, {"c": "DAA", "n": "Licencia de asuntos particulares (año anterior)", "f": "all", "d": "El nombre no concede un traslado de ejercicio. Comprobar autorización y plazo aplicable.", "src": "Catálogo público 2025; Manual SAS 2026, salvo CJA: instrucción histórica 2025"}, {"c": "DCF", "n": "Asuntos particulares por trienios", "f": "all", "d": "Art. 30.3.b: sexto y séptimo trienio, 2 días; octavo, 3; noveno, 4. Desde el día siguiente al cumplimiento. Computan como jornada efectivamente realizada.", "src": "Catálogo público 2025; Manual SAS 2026, salvo CJA: instrucción histórica 2025"}, {"c": "DCI", "n": "Licencia de asuntos particulares", "f": "all", "d": "Seis días por año natural; 42 h para cálculo anual. En GERHONTE aplicar el art. 11.3 y el turno programado. Ciclo 2026 hasta el 31/01/2027.", "src": "Catálogo público 2025; Manual SAS 2026, salvo CJA: instrucción histórica 2025"}, {"c": "DIC", "n": "Compensación 24 y 31 de diciembre", "f": "all", "d": "Art. 30.3.e: compensación por jornada ordinaria realizada esos días, con salvedad del descanso programado. Ciclo 2026 hasta el 28/02/2027.", "src": "Catálogo público 2025; Manual SAS 2026, salvo CJA: instrucción histórica 2025"}, {"c": "VAD", "n": "Días adicionales de vacaciones por antigüedad", "f": "all", "d": "Arts. 33.3 y 34.b: 15/20/25/30 años, 1/2/3/4 días. Siete horas para cálculo de jornada. Tercer período condicionado a solicitud, razones organizativas o asistenciales y resolución motivada; en ese caso sin fraccionamiento.", "src": "Catálogo público 2025; Manual SAS 2026, salvo CJA: instrucción histórica 2025"}];
+const TL={resta:"Descuenta horas",suma:"Suma / compensa",neutra:"No altera la jornada"};
+const box=document.getElementById("codes");
+function render(list){
+ box.innerHTML=list.map(x=>`<div class="card" data-f="${x.f}">
+  <h4><code class="k">${x.c}</code> · ${x.n}</h4>
+  <p style="margin:6px 0">${x.d}</p>
+  
+  <div class="src" style="margin-top:8px">Fuente: ${x.src}</div></div>`).join("");
+ if(!list.length) box.innerHTML='<p style="color:var(--sub)">Sin resultados.</p>';
+}
+let f="all";
+function apply(){
+ const q=(document.getElementById("q").value||"").toLowerCase();
+ render(CODES.filter(x=>(f==="all"||x.f===f)&&(x.c.toLowerCase().includes(q)||x.n.toLowerCase().includes(q)||x.d.toLowerCase().includes(q))));
+}
+document.getElementById("q").addEventListener("input",apply);
+document.querySelectorAll(".fbtn").forEach(b=>b.addEventListener("click",()=>{
+ document.querySelectorAll(".fbtn").forEach(x=>x.classList.remove("on"));
+ b.classList.add("on");f=b.dataset.f;apply();
+}));
+render(CODES);
+function calc(){
+ const v=id=>{const x=document.getElementById(id).value.trim();return x===''?NaN:Number(x.replace(',','.'));};
+ const r=v('planilla')-v('referencia');
+ document.getElementById('result').textContent=Number.isFinite(r)?(r>0?'+':'')+r.toLocaleString('es-ES')+' h':'Introduce dos cantidades válidas';
+ document.getElementById('calc-detail').textContent='Solo diferencia aritmética. No determina obligación individual ni deuda.';
+}
+['planilla','referencia'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+document.getElementById('ref-diurno').addEventListener('click',()=>{document.getElementById('referencia').value=1540;calc();});
+document.getElementById('ref-rotatorio').addEventListener('click',()=>{document.getElementById('referencia').value=1483;calc();});
+calc();
+</script>
+</body>
+</html>
